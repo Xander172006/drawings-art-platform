@@ -4,17 +4,13 @@
 </script>
 
 <template>
-    <div class="min-h-screen flex flex-col sm:justify-center items-center pt-6 sm:pt-0"
-         style="background-image: url('https://m.media-amazon.com/images/M/MV5BMjA1OTNlZmItMTkzOC00ZTFkLTlhNWYtZjNkMzY2ZDkyNTNhXkEyXkFqcGdeQXVyOTc4OTAwMjU@._V1_.jpg'); background-size: cover;">
-        <div>
-            <Link href="/">
-                <ApplicationLogo class="w-20 h-20 fill-current text-gray-500" />
-            </Link>
-        </div>
-
-        <div
-            class="w-full sm:max-w-md mt-6 px-6 py-4 bg-white dark:bg-gray-800 shadow-md overflow-hidden sm:rounded-lg"
-        >
+    <div class="min-h-screen flex flex-col sm:justify-center items-center bg-gradient-to-r from-slate-200 to-sky-500">
+        <h1 class="font-lobster text-[2.5rem] font-bold mb-6 mt-6 sm:mt-0">CodeArtistry</h1>
+        <div class="w-[95%] sm:max-w-lg mt-6 px-4 py-6 bg-white bg-opacity-30 backdrop-blur-[4px] shadow-2xl overflow-hidden sm:rounded-lg">
+            <div class="flex flex-col justify-center items-center">
+                <Link href="/">
+                </Link>
+            </div>
             <slot />
         </div>
     </div>

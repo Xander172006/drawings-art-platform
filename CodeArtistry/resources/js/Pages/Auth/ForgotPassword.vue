@@ -36,17 +36,18 @@ const submit = () => {
 
         <form @submit.prevent="submit">
             <div>
-                <InputLabel for="email" value="Email" />
-
-                <TextInput
-                    id="email"
-                    type="email"
-                    class="mt-1 block w-full"
-                    v-model="form.email"
-                    required
-                    autofocus
-                    autocomplete="username"
-                />
+                <span class="flex items-center border-b-[2px] border-b-gray-500 hover:border-b-[2.5px] hover:pb-2 transition-all duration-300 ease-in-out focus:ring-0 focus:border-b-gray-500">
+                    <TextInput
+                        id="email"
+                        type="email"
+                        class="mt-1 block w-full"
+                        v-model="form.email"
+                        required
+                        autofocus
+                        autocomplete="username"
+                        placeholder="email"
+                    />
+                </span>
 
                 <InputError class="mt-2" :message="form.errors.email" />
             </div>

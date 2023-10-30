@@ -12,8 +12,15 @@ export default {
 
     theme: {
         extend: {
+            backgroundImage: {
+                'SearchBg': "url('https://wallpapercave.com/wp/wp6112214.jpg')"
+            },
             fontFamily: {
                 sans: ['Figtree', ...defaultTheme.fontFamily.sans],
+                mono: "'Courier New', Courier, monospace",
+                anton: ['Anton', 'sans'],
+                dancing: ['Dancing Script', 'cursive'],
+                lobster: ['Lobster', 'sans'],
             },
         },
     },

@@ -1,13 +1,17 @@
 <?php
 
-use App\Http\Controllers\ProfileController;
 use Illuminate\Foundation\Application;
 use Illuminate\Support\Facades\Route;
 use Inertia\Inertia;
 
+// controllers
+use App\Http\Controllers\ProfileController;
+use App\Http\Controllers\SearchController;
+
+
 
 Route::middleware('auth')->group(function () {
-    Route::get('/', function () {
+    Route::get('/home', function () {
         return Inertia::render('Home', [
             'canLogin' => Route::has('login'),
             'canRegister' => Route::has('register'),
@@ -15,6 +19,8 @@ Route::middleware('auth')->group(function () {
             'phpVersion' => PHP_VERSION,
         ]);
     })->name('home');
+
+    Route::get('/search', [SearchController::class, 'index'])->name('search');
 
     Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
     Route::patch('/profile', [ProfileController::class, 'update'])->name('profile.update');
