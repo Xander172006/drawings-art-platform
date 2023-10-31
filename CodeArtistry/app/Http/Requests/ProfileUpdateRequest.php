@@ -8,16 +8,23 @@ use Illuminate\Validation\Rule;
 
 class ProfileUpdateRequest extends FormRequest
 {
-    /**
-     * Get the validation rules that apply to the request.
-     *
-     * @return array<string, \Illuminate\Contracts\Validation\Rule|array|string>
-     */
     public function rules(): array
     {
         return [
-            'name' => ['string', 'max:255'],
+            'name' => 'string|required|regex:/^[A-Za-z\s]+$/',
             'email' => ['email', 'max:255', Rule::unique(User::class)->ignore($this->user()->id)],
+            'region' => ['string', 'max:255', Rule::in(['North-America', 'South-America', 'Europe', 'Oceania', 'Asia', 'Africa'])],
+        ];
+    }
+
+    public function messages()
+    {
+        return [
+            'name.required' => 'The name field is required.',
+            'name.string' => 'This name is invalid',
+            'name.max' => 'The name may not contain more than :max characters.',
+            'email.unique' => 'This email is already taken.',
+            'region.required' => 'The region is not specified.',
         ];
     }
 }
