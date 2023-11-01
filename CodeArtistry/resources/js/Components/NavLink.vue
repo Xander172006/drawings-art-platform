@@ -14,7 +14,7 @@ const props = defineProps({
 
 const classes = computed(() =>
     props.active
-        ? 'bg-gray-200'
+        ? 'bg-sky-200'
         : ''
 );
 </script>

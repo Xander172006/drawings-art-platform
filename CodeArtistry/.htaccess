@@ -1,0 +1,6 @@
+Options +FollowSymLinks
+RewriteEngine On
+
+# Rewrite the URL from /edit?/Profile to /edit/Profile
+RewriteCond %{QUERY_STRING} !=""
+RewriteRule ^([^?]*)$ /$1? [R=301,L]

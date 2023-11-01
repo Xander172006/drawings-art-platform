@@ -16,10 +16,8 @@ onMounted(() => {
     }
 });
 
-const { user, profileImageUrl, session } = usePage().props;
+const { user, profileImageUrl } = usePage().props;
 const profile = ref(profileImageUrl);
-
-console.log(session);
 
 // set values in the form
 const form = useForm({
@@ -29,8 +27,12 @@ const form = useForm({
     profile_image: user.profile_image
 });
 
-</script>
 
+function hideFlashMessage() {
+    document.getElementById('flashMessage').style.display = 'none';
+}
+
+</script>
 
 <template>
     <section class="bg-white px-8 pt-6 pb-1 rounded-lg">
@@ -58,27 +60,41 @@ const form = useForm({
                 </label>
             </div>
 
-     
+            <div v-if="$page.props.flash.message" class="absolute right-[5%] bottom-[5%] bg-white p-5 rounded-lg shadow-md w-[17.5%]" id="flashMessage">
+                <span class="flex flex-row items-center gap-4">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" fill="#33FF32" class="bi bi-check2 font-bold" viewBox="0 0 16 16">
+                        <path d="M13.854 3.646a.5.5 0 0 1 0 .708l-7 7a.5.5 0 0 1-.708 0l-3.5-3.5a.5.5 0 1 1 .708-.708L6.5 10.293l6.646-6.647a.5.5 0 0 1 .708 0" stroke="green" stroke-width="2"/>
+                    </svg>
+
+                    {{ $page.props.flash.message }}
+
+                    <button class="ml-auto hover:bg-gray-300 p-2 rounded-md" v-on:click="hideFlashMessage">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" fill="currentColor" class="bi bi-x-lg" viewBox="0 0 16 16">
+                            <path d="M2.146 2.854a.5.5 0 1 1 .708-.708L8 7.293l5.146-5.147a.5.5 0 0 1 .708.708L8.707 8l5.147 5.146a.5.5 0 0 1-.708.708L8 8.707l-5.146 5.147a.5.5 0 0 1-.708-.708L7.293 8 2.146 2.854Z"/>
+                        </svg>
+                    </button>
+                </span>
+            </div>
 
             <div>
                 <ul class="flex flex-col gap-[1.5rem]">
                     <li class="flex flex-col gap-1">
                         <label for="" class="font-semibold">Username</label>
-                        <input type="text" name="name" v-model="form.name" class="rounded-lg border-gray-400">
+                        <input type="text" name="name" v-model="form.name" class="rounded-lg border-gray-400 focus:ring-0 focus:border-black focus:outline-none">
                         <div class="text-red-500 text-[0.9rem] my-1" v-if="form.errors.name">{{ form.errors.name }}</div>
                     </li>
 
 
                     <li class="flex flex-col gap-1">
                         <label for="" class="font-semibold">Email</label>
-                        <input type="text" name="email" v-model="form.email" class="rounded-lg border-gray-400">
+                        <input type="text" name="email" v-model="form.email" class="rounded-lg border-gray-400 focus:ring-0 focus:border-black focus:outline-none">
                         <div class="text-red-500 text-[0.9rem] my-1" v-if="form.errors.email">{{ form.errors.email }}</div>
                     </li>
 
 
                     <li class="flex flex-col gap-1">
                         <label for="" class="font-semibold">Region</label>
-                        <select name="region" v-model="form.region" class="rounded-lg border-gray-400">
+                        <select name="region" v-model="form.region" class="rounded-lg border-gray-400 focus:ring-0 focus:border-black focus:outline-none">
                             <option value="North-America">North-America</option>
                             <option value="South-America">South America</option>
                             <option value="Europe">Europe</option>

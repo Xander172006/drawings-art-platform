@@ -28,7 +28,6 @@ class ProfileController extends Controller
             'status' => session('status'),
             'user' => $user,
             'profileImageUrl' => asset('storage/images/' . $user->profile_image),
-            'session' => session()->all()
         ]);
     }
 
@@ -45,8 +44,6 @@ class ProfileController extends Controller
             $newFileName = uniqid('profile-', true) . '.' . $fileExt;
             $file->storeAs('/public/images', $newFileName);
             $request->user()->profile_image = $newFileName;
-    
-            session()->flash('success', 'updated the profile picture successfully');
         }
     
         // user information
@@ -55,9 +52,8 @@ class ProfileController extends Controller
         }
     
         $request->user()->save();
-        session()->flash('success', 'updated the profile successfully');
-    
-        return redirect()->route('profile.edit');
+        
+        return redirect('/profile?/profile')->with('message', 'Successfully updated');
     }
     
     

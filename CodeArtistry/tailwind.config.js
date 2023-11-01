@@ -13,7 +13,7 @@ export default {
     theme: {
         extend: {
             backgroundImage: {
-                'SearchBg': "url('https://wallpapercave.com/wp/wp6112214.jpg')"
+                'SearchBg': "url('https://www.desktopbackground.org/download/1280x720/2010/10/26/100997_blue-sky-cloud-anime-1920x1080-hd-wallpapers-and-free-stock-photo_1920x1080_h.jpg')"
             },
             fontFamily: {
                 sans: ['Figtree', ...defaultTheme.fontFamily.sans],
