@@ -50,7 +50,7 @@ const open = ref(false);
             <div
                 v-show="open"
                 class="absolute z-50 mt-2 rounded-md shadow-lg"
-                :class="[widthClass, 'bottom-5 right-2']"
+                :class="[widthClass, 'bottom-10 left-0']"
                 style="display: none"
                 @click="open = false"
             >

@@ -40,13 +40,13 @@ onMounted(() => {
         <div class="py-12 w-full bg-SearchBg bg-cover h-[100vh]">
             <div class="max-w-7xl mx-auto sm:px-6 lg:px-8">
                 <div class="mt-[15%] mb-[3%] flex flex-col justify-center items-center gap-2">
-                    <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" fill="white" class="bi bi-search font-extrabold" viewBox="0 0 16 16">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" fill="black" class="bi bi-search font-extrabold" viewBox="0 0 16 16">
                         <path d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001c.03.04.062.078.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1.007 1.007 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0z"/>
                     </svg>
-                    <p class="text-[2rem] font-bold text-white">Search for creators you like</p>
+                    <p class="sm:text-[2rem] text-[1.5rem] font-bold text-black">Search for creators you like</p>
 
                     <form action="" class="w-full flex justify-center my-4">
-                        <span class="absolute w-[35%] flex justify-center items-center">
+                        <span class="absolute sm:w-[35%] w-[90%] flex justify-center items-center">
                             <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" class="bi bi-search font-extrabold absolute left-4" viewBox="0 0 16 16">
                                 <path d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001c.03.04.062.078.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1.007 1.007 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0z"/>
                             </svg>
@@ -62,7 +62,7 @@ onMounted(() => {
                 </div>
 
                 <div class="flex justify-center items-center">
-                    <ul class="w-[40%] bg-white flex flex-col justify-center items-center rounded-lg max-h-[15rem] overflow-y-auto" data-lists>
+                    <ul class="sm:w-[40%] w-[85%] sm:mt-0 mt-5 bg-white flex flex-col justify-center items-center rounded-lg max-h-[15rem] overflow-y-auto" data-lists>
                         <li
                             class="w-full hidden text-[0.85rem] flex-row items-center hover:bg-gray-200 hover:rounded-lg gap-4 p-2"
                             :id="'searchResult' + user.id"

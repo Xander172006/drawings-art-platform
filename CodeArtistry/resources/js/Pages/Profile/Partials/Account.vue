@@ -8,7 +8,7 @@ const profile = ref(profileImageUrl);
 </script>
 
 <template>
-    <main class="flex flex-col gap-8">
+    <main class="flex flex-col gap-8 my-8 sm:w-[70%] w-[95%] mx-auto">
         <section class="bg-white px-8 pt-6 pb-1 rounded-lg">
             <h1 class="font-bold text-[1.5rem]">Login</h1>
 
