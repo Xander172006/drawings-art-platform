@@ -54,7 +54,7 @@ const PremiumMembership = ['Dedicated Partner Manager', 'Merch for Membership', 
                         </li>
                     </ul>
                     <div class="flex flex-col w-full mt-auto gap-3">
-                        <button class="bg-sky-200 p-2 rounded-3xl w-[85%] mx-auto text-blue-700">Get started</button>
+                        <button class="bg-sky-200 p-2 rounded-3xl w-[85%] mx-auto text-blue-700 hover:scale-[1.025] focus:bg-sky-300">Get started</button>
                         <button>Learn more</button>
                     </div>
                 </form>
@@ -93,7 +93,7 @@ const PremiumMembership = ['Dedicated Partner Manager', 'Merch for Membership', 
                         </li>
                     </ul>
                     <div class="flex flex-col w-full mt-4 gap-3">
-                        <button class="bg-sky-500 p-2 rounded-3xl w-[85%] mx-auto text-white">Get started</button>
+                        <button class="bg-sky-500 p-2 rounded-3xl w-[85%] mx-auto text-white hover:scale-[1.025] focus:bg-sky-600">Get started</button>
                         <button>Learn more</button>
                     </div>
                 </form>
@@ -128,7 +128,7 @@ const PremiumMembership = ['Dedicated Partner Manager', 'Merch for Membership', 
                         </li>
                     </ul>
                     <div class="flex flex-col w-full gap-3 mt-auto">
-                        <button class="bg-sky-200 p-2 rounded-3xl w-[85%] mx-auto text-blue-700">Get started</button>
+                        <button class="bg-sky-200 p-2 rounded-3xl w-[85%] mx-auto text-blue-700 hover:scale-[1.025] focus:bg-sky-300">Get started</button>
                         <button>Learn more</button>
                     </div>
                 </form>
