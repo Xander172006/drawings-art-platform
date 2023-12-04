@@ -61,7 +61,7 @@ function hideFlashMessage() {
                     </label>
                 </div>
 
-                <div v-if="$page.props.flash.message" class="absolute right-[5%] bottom-[5%] bg-white p-5 rounded-lg shadow-md sm:w-[17.5%]" id="flashMessage">
+                <div v-if="$page.props.flash.message" class="absolute right-[5%] bottom-[5%] bg-white p-5 rounded-lg shadow-md sm:w-[20%]" id="flashMessage">
                     <span class="flex flex-row items-center gap-4">
                         <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" fill="#33FF32" class="bi bi-check2 font-bold" viewBox="0 0 16 16">
                             <path d="M13.854 3.646a.5.5 0 0 1 0 .708l-7 7a.5.5 0 0 1-.708 0l-3.5-3.5a.5.5 0 1 1 .708-.708L6.5 10.293l6.646-6.647a.5.5 0 0 1 .708 0" stroke="green" stroke-width="2"/>

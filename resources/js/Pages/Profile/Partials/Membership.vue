@@ -11,6 +11,23 @@ const PremiumMembership = ['Dedicated Partner Manager', 'Merch for Membership', 
 
 </script>
 
+<script>
+    export default {
+    data() {
+        return {
+            membershipName: "yo",
+        };
+    },
+    methods: {
+        submitForm(membershipType) {
+            this.selectedMembership = membershipType;
+
+            this.$inertia.visit(`/membership/${this.selectedMembership}`);
+        },
+    },
+    };
+</script>
+
 <template>
     <main class="flex flex-col justify-center items-center sm:w-full w-[95%] mx-auto h-full">
         <section class="px-8 pb-1 rounded-lg pt-6 mt-3 mb-10">
@@ -42,7 +59,7 @@ const PremiumMembership = ['Dedicated Partner Manager', 'Merch for Membership', 
                     <p class="text-gray-500 text-[0.8rem]">plus payment processing</p>
                 </div>
 
-                <form class="flex flex-col my-5 sm:h-[43%]">
+                <form @submit.prevent="submitForm('Lite')" class="flex flex-col my-5 sm:h-[43%]">
                     <ul class="flex flex-col w-full px-4 py-2" v-for="(membership, index) in LiteMembership" :key="index">
                         <li class="mr-auto text-[0.85rem] flex flex-row items-center gap-2">
                             <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="#009E98" class="bi bi-check2" viewBox="0 0 16 16">
@@ -54,7 +71,7 @@ const PremiumMembership = ['Dedicated Partner Manager', 'Merch for Membership', 
                         </li>
                     </ul>
                     <div class="flex flex-col w-full mt-auto gap-3">
-                        <button class="bg-sky-200 p-2 rounded-3xl w-[85%] mx-auto text-blue-700 hover:scale-[1.025] focus:bg-sky-300">Get started</button>
+                        <button class="bg-sky-200 p-2 rounded-3xl w-[85%] mx-auto text-blue-700 hover:scale-[1.025] focus:bg-sky-300" type="submit">Get started</button>
                         <button>Learn more</button>
                     </div>
                 </form>
@@ -81,7 +98,7 @@ const PremiumMembership = ['Dedicated Partner Manager', 'Merch for Membership', 
                     <p class="text-gray-500 text-[0.8rem]">plus payment processing</p>
                 </div>
 
-                <form class="flex flex-col my-5">
+                <form @submit.prevent="submitForm('Pro')" class="flex flex-col my-5">
                     <ul class="flex flex-col w-full px-4 py-2" v-for="(membership, index) in ProMembership" :key="index">
                         <li class="mr-auto text-[0.85rem] flex flex-row items-center gap-2">
                             <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="#009E98" class="bi bi-check2" viewBox="0 0 16 16">
@@ -93,7 +110,7 @@ const PremiumMembership = ['Dedicated Partner Manager', 'Merch for Membership', 
                         </li>
                     </ul>
                     <div class="flex flex-col w-full mt-4 gap-3">
-                        <button class="bg-sky-500 p-2 rounded-3xl w-[85%] mx-auto text-white hover:scale-[1.025] focus:bg-sky-600">Get started</button>
+                        <button class="bg-sky-500 p-2 rounded-3xl w-[85%] mx-auto text-white hover:scale-[1.025] focus:bg-sky-600" type="submit">Get started</button>
                         <button>Learn more</button>
                     </div>
                 </form>
@@ -116,7 +133,7 @@ const PremiumMembership = ['Dedicated Partner Manager', 'Merch for Membership', 
                     <p class="text-gray-500 text-[0.8rem]">plus payment processing</p>
                 </div>
 
-                <form class="flex flex-col my-5 sm:h-[44.5%]">
+                <form @submit.prevent="submitForm('Premium')" class="flex flex-col my-5 sm:h-[44.5%]">
                     <ul class="flex flex-col w-full px-4 py-2" v-for="(membership, index) in PremiumMembership" :key="index">
                         <li class="mr-auto text-[0.85rem] flex flex-row items-center gap-2">
                             <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="#009E98" class="bi bi-check2" viewBox="0 0 16 16">
@@ -128,7 +145,7 @@ const PremiumMembership = ['Dedicated Partner Manager', 'Merch for Membership', 
                         </li>
                     </ul>
                     <div class="flex flex-col w-full gap-3 mt-auto">
-                        <button class="bg-sky-200 p-2 rounded-3xl w-[85%] mx-auto text-blue-700 hover:scale-[1.025] focus:bg-sky-300">Get started</button>
+                        <button class="bg-sky-200 p-2 rounded-3xl w-[85%] mx-auto text-blue-700 hover:scale-[1.025] focus:bg-sky-300" type="submit">Get started</button>
                         <button>Learn more</button>
                     </div>
                 </form>
